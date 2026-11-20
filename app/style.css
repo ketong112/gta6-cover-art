@@ -1,0 +1,312 @@
+/* Vice Cover Studio — dark violet studio, the poster is the bright thing. */
+@font-face {
+  font-family: "Anton";
+  src: url("./fonts/Anton-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("./fonts/BebasNeue-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Pacifico";
+  src: url("./fonts/Pacifico-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --night: #1b1035;
+  --night-2: #241647;
+  --panel: #2a1b52;
+  --line: #4a3480;
+  --ink: #f6efff;
+  --muted: #b9a8dd;
+  --pink: #ff2e88;
+  --orange: #ff7a18;
+  --gold: #ffc93c;
+  --teal: #19e3d6;
+  --cream: #fff6e8;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--night);
+  color: var(--ink);
+  font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 14px 20px;
+  background: linear-gradient(90deg, #2b1150, #3d1458 55%, #57203f);
+  border-bottom: 3px solid var(--pink);
+}
+
+.brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.brand-mark {
+  font-family: "Anton", "Arial Black", sans-serif;
+  font-size: 26px;
+  letter-spacing: 1px;
+  color: var(--night);
+  background: linear-gradient(180deg, var(--gold), var(--orange) 60%, var(--pink));
+  padding: 6px 10px 4px;
+  border-radius: 4px;
+  transform: rotate(-3deg);
+  flex: none;
+}
+.brand h1 {
+  font-family: "Anton", "Arial Black", sans-serif;
+  font-weight: 400;
+  font-size: 26px;
+  letter-spacing: 1.5px;
+  margin: 0;
+  line-height: 1.05;
+}
+.brand p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+
+.steps {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+.steps li {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.steps b {
+  display: inline-block;
+  width: 20px; height: 20px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--pink);
+  color: #fff;
+  margin-right: 6px;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 14px;
+}
+
+.surprise {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 18px;
+  letter-spacing: 1.5px;
+  background: var(--gold);
+  color: #231303;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 16px;
+  cursor: pointer;
+}
+.surprise:hover { background: #ffd75e; }
+
+.studio {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr) 320px;
+  gap: 16px;
+  padding: 16px 20px;
+  align-items: start;
+  max-width: 1560px;
+  margin: 0 auto;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 16px;
+}
+.panel h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  margin: 0 0 8px;
+  color: var(--gold);
+}
+.panel h2.subhead { margin-top: 20px; }
+.note { color: var(--muted); font-size: 13px; margin: 6px 0 10px; }
+.note.fine { font-size: 12px; }
+
+label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+label input[type="text"] {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+  background: #1b1035;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  border-radius: 6px;
+  padding: 8px 10px;
+  font: 15px/1.4 system-ui, sans-serif;
+}
+label input[type="text"]:focus { outline: 2px solid var(--teal); outline-offset: 1px; }
+
+.upload {
+  display: block;
+  text-align: center;
+  background: var(--pink);
+  color: #fff;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 19px;
+  letter-spacing: 1.5px;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.upload:hover { background: #ff4a99; }
+.upload input { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
+
+.tray {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.tray button {
+  border: 2px solid transparent;
+  border-radius: 6px;
+  padding: 0;
+  background: #140b28;
+  cursor: pointer;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+}
+.tray button img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.tray button.selected { border-color: var(--gold); box-shadow: 0 0 0 2px var(--gold); }
+.tray button.sample::after {
+  content: "sample";
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  background: #140b28;
+  padding: 1px 0;
+}
+
+.photo-actions { display: flex; gap: 8px; margin-bottom: 6px; }
+.photo-actions button,
+.row button {
+  flex: 1;
+  background: #3a2470;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 6px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.photo-actions button:hover, .row button:hover { background: #4a2f8a; }
+.row { display: flex; gap: 8px; }
+.row button[aria-pressed="true"] { background: var(--teal); color: #06231f; border-color: var(--teal); }
+
+.slider-label input[type="range"] { width: 100%; accent-color: var(--pink); margin-top: 6px; }
+
+.stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+#poster {
+  width: min(100%, 640px);
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+  background: var(--cream);
+  cursor: crosshair;
+}
+.hint { color: var(--muted); font-size: 13px; margin: 0; text-align: center; }
+
+.layouts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.layouts button {
+  background: #1b1035;
+  border: 2px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 4px 6px;
+  cursor: pointer;
+  color: var(--ink);
+}
+.layouts button.active { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+.layouts .mini { height: 44px; margin: 0 4px 5px; border-radius: 3px; overflow: hidden; position: relative; background: var(--cream); }
+.layouts .mini i { position: absolute; background: linear-gradient(135deg, #ff7a18, #ff2e88 60%, #7b2ff7); }
+.layouts .name { font-size: 11px; color: var(--muted); display: block; }
+
+.grades { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.grades button {
+  border: 2px solid var(--line);
+  border-radius: 6px;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  background: none;
+}
+.grades button.active { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+.grades .swatch { height: 40px; }
+.grades .gname { display: block; background: #1b1035; color: var(--ink); font-size: 11px; padding: 4px 2px; }
+
+#roles label { margin-bottom: 8px; }
+.check { display: flex; align-items: center; gap: 8px; cursor: pointer; color: var(--ink); }
+.check input { accent-color: var(--pink); width: 16px; height: 16px; }
+
+.sizes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px; }
+.sizes button {
+  background: #1b1035;
+  border: 2px solid var(--line);
+  border-radius: 6px;
+  color: var(--ink);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 17px;
+  letter-spacing: 1px;
+  padding: 8px 4px;
+  cursor: pointer;
+}
+.sizes button span { font-family: system-ui, sans-serif; font-size: 11px; color: var(--muted); letter-spacing: 0; }
+.sizes button.active { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+
+.export {
+  width: 100%;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, var(--orange), var(--pink));
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 11px;
+  cursor: pointer;
+}
+.export:hover { filter: brightness(1.1); }
+.status { min-height: 20px; color: var(--teal); font-size: 13px; margin: 8px 0 0; }
+
+.foot { text-align: center; color: var(--muted); font-size: 12px; padding: 4px 16px 20px; }
+
+/* Cover-only shot mode: hide the studio chrome, show the poster full frame. */
+body.shot-cover .topbar, body.shot-cover .panel, body.shot-cover .foot, body.shot-cover .hint { display: none; }
+body.shot-cover .studio { display: block; padding: 0; max-width: none; }
+body.shot-cover .stage { display: block; }
+body.shot-cover #poster { width: 100vw; height: 100vh; border-radius: 0; box-shadow: none; object-fit: contain; }
+
+:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+@media (max-width: 1080px) {
+  .studio { grid-template-columns: 1fr; }
+  .steps { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
